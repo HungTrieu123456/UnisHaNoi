@@ -9,11 +9,19 @@
 
 .background-content .item {
   margin: 20px;
-  height: 35px;
-  background: #fdf9ef;
   position: absolute;
-  border-radius: 8px 8px 0px 0px;
   display: inline-block;
+  cursor: pointer;
+  width: 154px;
+}
+
+.background-content .item .title:hover {
+  box-shadow: 0px 6px 8px 0px #3e3e3e80;
+}
+
+.background-content .item .title:active {
+  color: #fdf9ef;
+  background: #004b98;
 }
 
 .background-content .item .title {
@@ -21,8 +29,39 @@
   font-style: normal;
   font-weight: normal;
   font-size: 16px;
-  line-height: 27px;
   text-align: center;
   color: #1b3667;
-  margin: 8px 24px;
+  display: block;
+  background: #fdf9ef;
+  border-radius: 8px 8px 0px 0px;
+}
+
+.background-content .item .wrap-list-flag {
+  padding: 16px;
+  background: #fdf9ef;
+  border: 1px solid #004b98;
+  border-radius: 0px 0px 8px 8px;
+  display: flex;
+  z-index: 10000000;
+  position: absolute;
+  width: 154px;
+  flex-wrap: wrap;
+}
+
+.background-content .item .wrap-flag {
+  width: 60px;
+  height: 45px;
+  padding: 10px;
+  flex: 0 0 auto;
+}
+
+.background-content .item .wrap-flag:hover {
+  background: #dadada;
+}
+
+.background-content .item .wrap-flag .flag {
+  background: url("../images/Flag/Bahamas.png") no-repeat center;
+  width: 100%;
+  height: 100%;
+  background-size: 100%;
 }

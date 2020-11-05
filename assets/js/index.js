@@ -25,14 +25,14 @@ function handleClickTitle(_this) {
 }
 
 function listFlagTemplate(regionName) {
-  var flagTemplate = `<div class="wrap-flag"><div class="flag" style="background: url('./assets/images/Flag/{0}.png') no-repeat center; background-size: 100%;">
+  var flagTemplate = `<div class="wrap-flag" title='{1}'><div class="flag" style="background: url('./assets/images/Flag/{0}.png') no-repeat center; background-size: 100%;">
                     </div></div>`;
   var flagHTML = "";
 
   var countries = dataCountry.find((x) => x.RegionName == regionName);
   if (countries) {
     countries.Countries.forEach((country) => {
-      flagHTML += flagTemplate.format(country.Name);
+      flagHTML += flagTemplate.format(country.ImageName, country.ToolTip);
     });
   }
 

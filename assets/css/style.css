@@ -52,6 +52,7 @@
   width: 155px;
   flex-wrap: wrap;
   align-items: center;
+  outline: none;
 }
 
 .background-content .item .wrap-flag {
@@ -74,6 +75,7 @@
   width: 100%;
   height: 100%;
   background-size: 100%;
+  
 }
 
 .wrap-tooltip {

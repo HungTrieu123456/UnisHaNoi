@@ -15,11 +15,11 @@ $(document).ready(function () {
   $("body").on("hover", ".wrap-flag", function () {
     if ($(this).is(":hover")) {
       $(".wrap-flag").css({
-        opacity: 0.5
+        opacity: 0.5,
       });
 
       $(this).css({
-        opacity: 1
+        opacity: 1,
       });
 
       $(this).append(toolTipTemplate(this));
@@ -35,7 +35,7 @@ $(document).ready(function () {
     } else {
       $(this).find(".wrap-tooltip").remove();
       $(".wrap-flag").css({
-        opacity: 1
+        opacity: 1,
       });
     }
   });
@@ -57,7 +57,7 @@ function handleClickTitle(_this) {
 }
 
 function listFlagTemplate(regionName) {
-  var flagTemplate = `<div class="wrap-flag" title-flag='{1}' link-doc='{2}'><div class="flag" style="background: url('./assets/images/Flag/{0}.png') no-repeat center; background-size: 100%;">
+  var flagTemplate = `<div class="wrap-flag" title-flag="{1}" link-doc='{2}'><div class="flag" style="background: url('./assets/images/Flag/{0}.png') no-repeat center; background-size: 100%;">
                     </div></div>`;
   var flagHTML = "";
 
@@ -72,9 +72,12 @@ function listFlagTemplate(regionName) {
     });
   }
 
-  return `<div class="wrap-list-flag">
+  return `<div class="wrap-list-flag" style="flex-direction: {1}">
             {0}
-          </div>`.format(flagHTML);
+          </div>`.format(
+    flagHTML,
+    countries.FlexType ? countries.FlexType : "row"
+  );
 }
 
 function toolTipTemplate(_this) {

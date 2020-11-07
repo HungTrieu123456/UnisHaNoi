@@ -17,7 +17,7 @@
   position: absolute;
   display: inline-block;
   cursor: pointer;
-  width: 154px;
+  width: 155px;
 }
 
 .background-content .item .title:hover {
@@ -30,7 +30,7 @@
 }
 
 .background-content .item .title {
-  font-family: Acumin Pro;
+  font-family: sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 16px;
@@ -49,8 +49,9 @@
   display: flex;
   z-index: 10000000;
   position: absolute;
-  width: 154px;
+  width: 155px;
   flex-wrap: wrap;
+  align-items: center;
 }
 
 .background-content .item .wrap-flag {

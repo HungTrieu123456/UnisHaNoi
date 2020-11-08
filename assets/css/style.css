@@ -1,3 +1,7 @@
+#fsPageBody {
+  max-width: 1240px !important;
+}
+
 .title-region-active {
   color: #fdf9ef !important;
   background: #004b98 !important;

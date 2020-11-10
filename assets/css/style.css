@@ -8,12 +8,13 @@
 }
 
 .background-content {
-  width: 1200px;
+  width: 1160px;
   height: 632px;
   margin: auto;
   background: url("../images/back-ground.png") no-repeat center;
   padding: 36px;
   position: relative;
+  background-size: 120%;
 }
 
 .background-content .item {

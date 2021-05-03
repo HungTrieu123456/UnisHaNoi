@@ -14,8 +14,22 @@
 
 <body>
     <div class="container">
+        <div class="main">
+            <div class="background">
+                <img class="zone-selection" zone="zone1" style='position: absolute;
+                                    height: 47%;
+                                    width: 65%;
+                                    right: 0;
+                                    z-index: 2;
+                                    opacity: 0;' src="./asset/image/zone_02_selection.png" />
 
-        <div class="zone">
+                <img class="img-background" style='height: 100%; width: 100%; object-fit: contain'
+                    src="./asset/image/Map-full-x2.png" />
+            </div>
+        </div>
+
+
+        <div class="zone display-none" name="zone1">
             <div class="icons">
                 <span class="btn sound-on"></span>
                 <span class="btn sound-off display-none"></span>
@@ -26,10 +40,18 @@
                     </div>
                 </div>
 
-                <!-- <div class="question-form">
+                <div class="question-form">
                     <span class="frame"></span>
-                </div> -->
+                    <div class="question-text">
+                    </div>
+                </div>
             </div>
+
+            <!-- <div class="bonus-form">
+                <div class="frame">
+                    <span class="btn next"></span>
+                </div>
+            </div> -->
 
             <div class="background">
                 <img class="img-background" style='height: 98%; width: 100%; object-fit: contain'

@@ -1,7 +1,7 @@
 var questionsMoc = [
     {
         Name: "Question1",
-        Content: "Câu hỏi 1",
+        Content: "Question 1",
         Position: {
             RatioX: 0.92,
             RatioY: 0.15
@@ -10,7 +10,7 @@ var questionsMoc = [
     },
     {
         Name: "Question2",
-        Content: "Câu hỏi 2",
+        Content: "Question 2",
         Position: {
             RatioX: 0.84,
             RatioY: 0.39
@@ -19,7 +19,7 @@ var questionsMoc = [
     },
     {
         Name: "Question3",
-        Content: "Câu hỏi 3",
+        Content: "Question 3",
         Position: {
             RatioX: 0.83,
             RatioY: 0.59

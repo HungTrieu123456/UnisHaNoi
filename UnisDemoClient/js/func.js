@@ -1,11 +1,11 @@
-const imgBackground = document.querySelectorAll(".img-background")[0];
-
 function setSizeElement() {
+  const imgBackground = document.querySelectorAll(".zone .img-background")[0];
   imgBackground.height = innerHeight;
   $(".icons").width(imgBackground.width);
 }
 
 function setAnswerPosition() {
+  const imgBackground = document.querySelectorAll(".zone .img-background")[0];
   $(".zone .answer").remove();
   const questions = questionsMoc;
   if (!questions) {
@@ -23,15 +23,69 @@ function setAnswerPosition() {
 }
 
 function setScoreFrame() {
-    const total = questionsMoc.length;
-    const totalCompleted = questionsMoc.filter(x => x.Done).length;
-    $(".score .count-text .text").text(`${totalCompleted}/${total}`);
+  const total = questionsMoc.length;
+  const totalCompleted = questionsMoc.filter((x) => x.Done).length;
+  $(".score .count-text .text").text(`${totalCompleted}/${total}`);
 }
 
-function adjustClient() {
+function createQuestionTemplate(questions) {
+  let template = ``;
+  if (!questions) {
+    return;
+  }
+  questions.forEach((question) => {
+    template += `<li name="${question.Name}" class="${
+      question.Done ? "question-done" : ""
+    }">${question.Content}</li>`;
+  });
+  return `<ul>${template}</ul>`;
+}
+
+function setQuestionFrame() {
+  const questions = questionsMoc;
+  $(".question-form .question-text ul").remove();
+
+  $(".question-form .question-text").append(createQuestionTemplate(questions));
+}
+
+function showCongratulationForm() {
+  $(".zone .congratulation-form").remove();
+  const template = `<div class="congratulation-form">
+                      <div class="frame">
+                          <span class="btn home"></span>
+                          <span class="btn bonus"></span>
+                          <span class="btn next"></span>
+                      </div>
+                    </div>`;
+
+  $(".zone").append(template);
+}
+
+function showBonusForm() {
+  $(".zone .bonus-form").remove();
+  const template = `<div class="bonus-form">
+                      <div class="frame">
+                          <span class="btn next"></span>
+                      </div>
+                    </div>`;
+  $(".zone").append(template);
+}
+
+function restartZone() {
+  $(".question-form .question-text ul").remove();
+  $(".zone .congratulation-form").remove();
+  $(".zone .bonus-form").remove();
+  questionsMoc.forEach((question) => {
+    question.Done = false;
+  });
+}
+
+function adjustClientZone() {
   setSizeElement();
 
   setAnswerPosition();
+
+  setQuestionFrame();
 
   setScoreFrame();
 }

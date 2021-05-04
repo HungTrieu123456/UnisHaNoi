@@ -212,7 +212,7 @@ canvas {
   z-index: 2;
 }
 
-.congratulation-form .close {
+.congratulation-form .frame .close {
   background-image: url("../asset/icon/Close.svg");
   background-size: cover;
   background-repeat: no-repeat;
@@ -225,7 +225,7 @@ canvas {
   left: 383px;
 }
 
-.congratulation-form .home {
+.congratulation-form .frame .home {
   background-image: url("../asset/icon/Home.svg");
   background-size: cover;
   background-repeat: no-repeat;
@@ -238,7 +238,7 @@ canvas {
   left: 25px;
 }
 
-.congratulation-form .bonus {
+.congratulation-form .frame .bonus {
   background-image: url("../asset/icon/Bonus.svg");
   background-size: cover;
   background-repeat: no-repeat;
@@ -251,7 +251,7 @@ canvas {
   left: 159px;
 }
 
-.congratulation-form .next {
+.congratulation-form .frame .next {
   background-image: url("../asset/icon/Next.svg");
   background-size: cover;
   background-repeat: no-repeat;
@@ -262,6 +262,25 @@ canvas {
   position: absolute;
   top: 370px;
   left: 292px;
+}
+
+.congratulation-form .frame .animation-wrap {
+  display: inline-block;
+  position: absolute;
+  width: 163px;
+  height: 163px;
+  overflow: hidden;
+  border-radius: 50%;
+  top: 112px;
+  left: 133px;
+}
+
+.congratulation-form .frame .animation-wrap .animation {
+  width: auto;
+  height: 124%;
+  position: absolute;
+  top: -21px;
+  left: -42px;
 }
 
 .main {

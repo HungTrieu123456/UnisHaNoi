@@ -5,6 +5,7 @@ class Question {
     if (!question) {
       return;
     }
+    this.done = question.Done;
     this.name = question.Name;
     if (question.Position) {
       this.top = backgroundHeight * question.Position.RatioY;
@@ -13,8 +14,10 @@ class Question {
   }
 
   getAnswerHTML() {
-    return `<div class="answer" style="top: ${this.top}px; left: ${this.left}px;" name="${this.name}">
-                  <span class="check display-none"></span>
+    return `<div class="answer" style="top: ${this.top}px; left: ${
+      this.left
+    }px;" name="${this.name}">
+                  <span class="check ${this.done ? "" : "display-none"}"></span>
                 </div>`;
   }
 }

@@ -58,7 +58,13 @@ $(document).ready(function () {
     showBonusForm();
   });
 
-  $(".zone").on("click", ".bonus-form .next", function ($event) {
-    // $(".zone .bonus-form").remove();
+  $(".zone").on("click", ".bonus-form .home", function ($event) {
+    $(`.zone`).addClass("display-none");
+    $(`.main`).removeClass("display-none");
+    onZone = false;
+  });
+
+  $(".zone").on("click", ".popup .close", function ($event) {
+    $(this).closest(".popup").remove();
   });
 });

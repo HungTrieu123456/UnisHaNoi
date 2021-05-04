@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="800" version="1.1" viewBox="0 0 800.00001 800.00001" xmlns="http://www.w3.org/2000/svg">
+ <defs>
+  <mask id="f" maskUnits="userSpaceOnUse">
+   <circle cx="400" cy="400" r="400" color="#000000" color-rendering="auto" fill="#fff" fill-rule="evenodd" image-rendering="auto" shape-rendering="auto" solid-color="#000000" style="isolation:auto;mix-blend-mode:normal"/>
+  </mask>
+  <mask id="g" maskUnits="userSpaceOnUse">
+   <circle cx="400" cy="400" r="400" color="#000000" color-rendering="auto" fill="#fff" fill-rule="evenodd" image-rendering="auto" shape-rendering="auto" solid-color="#000000" style="isolation:auto;mix-blend-mode:normal"/>
+  </mask>
+  <mask id="h" maskUnits="userSpaceOnUse">
+   <circle cx="400" cy="400" r="400" color="#000000" color-rendering="auto" fill="#fff" fill-rule="evenodd" image-rendering="auto" shape-rendering="auto" solid-color="#000000" style="isolation:auto;mix-blend-mode:normal"/>
+  </mask>
+  <linearGradient id="e" x1="442.58" x2="95.13" y1="365.02" y2="712.47" gradientUnits="userSpaceOnUse">
+   <stop offset="0"/>
+   <stop stop-opacity="0" offset="1"/>
+  </linearGradient>
+ </defs>
+ <circle cx="400" cy="400" r="400" color="#000000" color-rendering="auto" fill="#1c8adb" fill-rule="evenodd" image-rendering="auto" shape-rendering="auto" solid-color="#000000" style="isolation:auto;mix-blend-mode:normal"/>
+ <path d="m400 135.13c-74.014 3e-5 -140.92 30.371-188.98 79.314l-210.62 210.62c9.9186 214.66 192.66 367.05 374.51 374.56l210.65-210.65c48.944-48.06 79.314-114.97 79.314-188.98-7e-5 -146.28-118.58-264.87-264.87-264.87z" color="#000000" color-rendering="auto" fill="url(#e)" fill-rule="evenodd" image-rendering="auto" mask="url(#h)" opacity=".42" shape-rendering="auto" solid-color="#000000" style="isolation:auto;mix-blend-mode:normal"/>
+ <path d="m304.48 272.32-32.16 32.16 95.519 95.519-95.519 95.519 32.16 32.16 95.519-95.519 95.519 95.519 32.16-32.16-95.519-95.519 95.519-95.519-32.16-32.16-95.519 95.519-95.519-95.519z" color="#000000" color-rendering="auto" fill="#fff" fill-rule="evenodd" image-rendering="auto" mask="url(#g)" shape-rendering="auto" solid-color="#000000" style="isolation:auto;mix-blend-mode:normal"/>
+ <path d="m400 135.13a264.87 264.87 0 0 0 -264.87 264.87 264.87 264.87 0 0 0 264.87 264.87 264.87 264.87 0 0 0 264.87 -264.87 264.87 264.87 0 0 0 -264.87 -264.87zm0 59.924a204.94 204.94 0 0 1 204.94 204.94 204.94 204.94 0 0 1 -204.94 204.94 204.94 204.94 0 0 1 -204.94 -204.94 204.94 204.94 0 0 1 204.94 -204.94z" color="#000000" color-rendering="auto" fill="#fff" fill-rule="evenodd" image-rendering="auto" mask="url(#f)" shape-rendering="auto" solid-color="#000000" style="isolation:auto;mix-blend-mode:normal"/>
+</svg>

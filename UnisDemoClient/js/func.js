@@ -2,6 +2,8 @@ function setSizeElement() {
   const imgBackground = document.querySelectorAll(".zone .img-background")[0];
   imgBackground.height = innerHeight;
   $(".icons").width(imgBackground.width);
+  $(".popup").width(imgBackground.width);
+  $(".popup").height(imgBackground.height);
 }
 
 function setAnswerPosition() {
@@ -50,25 +52,36 @@ function setQuestionFrame() {
 
 function showCongratulationForm() {
   $(".zone .congratulation-form").remove();
-  const template = `<div class="congratulation-form">
+  const template = `<div class="popup congratulation-form">
                       <div class="frame">
+                          <span class="btn close"></span>
                           <span class="btn home"></span>
                           <span class="btn bonus"></span>
                           <span class="btn next"></span>
                       </div>
+                      <div class="mask"></div>
                     </div>`;
 
   $(".zone").append(template);
+  const imgBackground = document.querySelectorAll(".zone .img-background")[0];
+  $(".popup").width(imgBackground.width);
+  $(".popup").height(imgBackground.height);
 }
 
 function showBonusForm() {
   $(".zone .bonus-form").remove();
-  const template = `<div class="bonus-form">
+  const template = `<div class="popup bonus-form">
                       <div class="frame">
-                          <span class="btn next"></span>
+                        <span class="btn close"></span>
+                        <span class="btn home"></span>
+                        <span class="btn next"></span>
                       </div>
+                      <div class="mask"></div>
                     </div>`;
   $(".zone").append(template);
+  const imgBackground = document.querySelectorAll(".zone .img-background")[0];
+  $(".popup").width(imgBackground.width);
+  $(".popup").height(imgBackground.height);
 }
 
 function restartZone() {

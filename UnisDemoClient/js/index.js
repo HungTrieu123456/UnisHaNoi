@@ -1,4 +1,4 @@
-let onZone = false;
+
 
 $(document).ready(function () {
   if (onZone) {
@@ -18,12 +18,19 @@ $(document).ready(function () {
       (x) => x.Name === $(this).attr("name")
     );
     if (questionName) {
+      if (!isMuted) {
+        $("#sound-found")[0].play();
+      }
       questionName.Done = true;
       setScoreFrame();
 
       setQuestionFrame();
 
       if (!questionsMoc.find((x) => !x.Done)) {
+        if (!isMuted) {
+          $("#sound-congratulation")[0].play();
+        }
+
         showCongratulationForm();
       }
     }
@@ -32,11 +39,13 @@ $(document).ready(function () {
   $(".sound-on").click(function ($event) {
     $(this).addClass("display-none");
     $(".sound-off").removeClass("display-none");
+    isMuted = true;
   });
 
   $(".sound-off").click(function ($event) {
     $(this).addClass("display-none");
     $(".sound-on").removeClass("display-none");
+    isMuted = false;
   });
 
   $(".zone-selection").click(function () {

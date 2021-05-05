@@ -1,3 +1,6 @@
+let onZone = false;
+let isMuted = false;
+
 function setSizeElement() {
   const imgBackground = document.querySelectorAll(".zone .img-background")[0];
   imgBackground.height = innerHeight;
@@ -54,7 +57,6 @@ function showCongratulationForm() {
   $(".zone .congratulation-form").remove();
   const template = `<div class="popup congratulation-form">
                       <div class="frame">
-                          <span class="btn close"></span>
                           <span class="btn home"></span>
                           <span class="btn bonus"></span>
                           <span class="btn next"></span>
@@ -97,8 +99,20 @@ function restartZone() {
   });
 }
 
+function setSoundState() {
+  if (isMuted) {
+    $(".sound-on").addClass("display-none");
+    $(".sound-off").removeClass("display-none");
+  } else {
+    $(".sound-off").addClass("display-none");
+    $(".sound-on").removeClass("display-none");
+  }
+}
+
 function adjustClientZone() {
   setSizeElement();
+
+  setSoundState();
 
   setAnswerPosition();
 

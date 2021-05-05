@@ -189,6 +189,10 @@ canvas {
   color: green;
 }
 
+.popup {
+
+}
+
 .congratulation-form {
   position: absolute;
   display: inline-block;
@@ -213,7 +217,7 @@ canvas {
 }
 
 .congratulation-form .frame .close {
-  background-image: url("../asset/icon/Close.svg");
+  background-image: url("../asset/icon/Cancel.svg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -360,16 +364,16 @@ canvas {
 }
 
 .bonus-form .close {
-  background-image: url("../asset/icon/Close.svg");
+  background-image: url(../asset/icon/Cancel.svg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   display: inline-block;
   position: absolute;
-  top: -14px;
-  left: 383px;
+  top: 30px;
+  left: 340px;
 }
 
 .bonus-form .home {

@@ -78,4 +78,13 @@ $(document).ready(function () {
   $(".zone").on("click", ".popup .close", function ($event) {
     $(this).closest(".popup").remove();
   });
+
+  $(".zone-selection").mouseenter(function(){
+    $(".main .mask").removeClass("display-none");
+  });
+
+  $(".zone-selection").mouseleave(function(){
+    $(".main .mask").addClass("display-none");
+
+  });
 });

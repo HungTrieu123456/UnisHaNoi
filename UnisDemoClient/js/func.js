@@ -61,8 +61,10 @@ function showCongratulationForm() {
                           <span class="btn bonus"></span>
                           <span class="btn next"></span>
                           <div class="animation-wrap">
-                              <video autoplay class="animation" loop>
-                            <source src="https://cdn.dribbble.com/users/738799/screenshots/14197020/media/f762a2164cc92f749e07161fdafada49.mp4" type="video/mp4"></video>
+                            <img style="width: auto;
+                                        height: 66%;
+                                        margin-left: -14px;
+                                        margin-top: 34px;" src="./asset/gif/Phelix_Animation.gif ">
                           </div>
                       </div>
                       <div class="mask"></div>

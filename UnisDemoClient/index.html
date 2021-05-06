@@ -1,72 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet" type="text/css" href="./css/style.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./css/style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Acme&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
     <title>UNIS</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="container">
-        <div class="main">
-            <div class="background">
-                <div class="zone-selection" zone="zone1">
-                    <img style="width: 100%; height: 100%;" src="./asset/image/zone_02_selection.png" />
+      <div class="main">
+        <div class="background">
+          <div class="zone-selection" zone="zone1">
+            <img
+              style="width: 100%; height: 100%"
+              src="./asset/image/zone_02_selection.png"
+            />
 
-                    <div class="title-wrap">
-                        <span class="title">Elementary Zone</span>
-                    </div>
-
-                </div>
-
-                <img class="img-background" style='height: 100%; width: 100%; object-fit: contain'
-                    src="./asset/image/Map-full-x2.png" />
+            <div class="title-wrap">
+              <span class="title">Elementary Zone</span>
             </div>
+          </div>
+
+          <img
+            class="img-background"
+            style="height: 100%; width: 100%; object-fit: contain"
+            src="./asset/image/Map-full-x2.png"
+          />
+        </div>
+      </div>
+
+      <div class="zone display-none" name="zone1">
+        <div class="icons">
+          <span class="btn sound-on"></span>
+          <span class="btn sound-off display-none"></span>
+          <div class="score">
+            <span class="count"></span>
+            <div class="count-text">
+              <span class="text"></span>
+            </div>
+          </div>
+
+          <div class="question-form">
+            <span class="frame"></span>
+            <div class="question-text"></div>
+          </div>
         </div>
 
-
-        <div class="zone display-none" name="zone1">
-            <div class="icons">
-                <span class="btn sound-on"></span>
-                <span class="btn sound-off display-none"></span>
-                <div class="score">
-                    <span class="count"></span>
-                    <div class="count-text">
-                        <span class="text"></span>
-                    </div>
-                </div>
-
-                <div class="question-form">
-                    <span class="frame"></span>
-                    <div class="question-text">
-                    </div>
-                </div>
-            </div>
-
-            <div class="background">
-                <img class="img-background" style='height: 98%; width: 100%; object-fit: contain'
-                    src="./asset/image/Zone 1 - Elementary - Image.png" />
-            </div>
+        <div class="background">
+          <img
+            class="img-background"
+            style="height: 98%; width: 100%; object-fit: contain"
+            src="./asset/image/Zone 1 - Elementary - Image.png"
+          />
         </div>
-
+      </div>
     </div>
 
     <audio class="sound-found">
-        <source src="./asset/sound/sfx-tim-thay-hinh.wav" type="audio/mpeg">
+      <source src="./asset/sound/sfx-tim-thay-hinh.wav" type="audio/mpeg" />
     </audio>
 
     <audio class="sound-congratulation">
-        <source src="./asset/sound/sfx-congratulation.wav" type="audio/mpeg">
+      <source src="./asset/sound/sfx-congratulation.wav" type="audio/mpeg" />
     </audio>
-</body>
-
+  </body>
 </html>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="./data.js"></script>

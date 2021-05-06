@@ -3,12 +3,14 @@
 $(document).ready(function () {
   if (onZone) {
     adjustClientZone();
+  } else {
+    adjustClientMain();
   }
 
   $(window).resize(() => {
-    if (onZone) {
-      adjustClientZone();
-    }
+    // if (onZone) {
+    //   adjustClientZone();
+    // }
   });
 
   $(".zone").on("click", ".answer", function ($event) {
@@ -19,7 +21,7 @@ $(document).ready(function () {
     );
     if (questionName) {
       if (!isMuted) {
-        $("#sound-found")[0].play();
+        $(".sound-found")[0].play();
       }
       questionName.Done = true;
       setScoreFrame();
@@ -28,7 +30,7 @@ $(document).ready(function () {
 
       if (!questionsMoc.find((x) => !x.Done)) {
         if (!isMuted) {
-          $("#sound-congratulation")[0].play();
+          $(".sound-congratulation")[0].play();
         }
 
         showCongratulationForm();

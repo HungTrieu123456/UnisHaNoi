@@ -186,11 +186,10 @@ canvas {
 }
 
 .question-done {
-  color: green;
+  /* color: green; */
 }
 
 .popup {
-
 }
 
 .congratulation-form {
@@ -316,11 +315,12 @@ canvas {
 }
 
 .zone-selection .title-wrap .title {
-  font-family: Roboto;
+  font-family: "Pacifico", cursive;
   font-weight: bold;
   font-size: 26px;
   line-height: 4px;
   color: #ffffff;
+  text-transform: uppercase;
 }
 
 .zone-selection:hover {

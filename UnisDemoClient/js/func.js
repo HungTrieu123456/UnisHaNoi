@@ -1,12 +1,13 @@
 let onZone = false;
 let isMuted = false;
 
-function setSizeElement() {
-  const imgBackground = document.querySelectorAll(".zone .img-background")[0];
-  imgBackground.height = innerHeight;
-  $(".icons").width(imgBackground.width);
-  $(".popup").width(imgBackground.width);
-  $(".popup").height(imgBackground.height);
+function setSizeZoneElement() {
+  const imgBackground = $(".zone .img-background");
+  imgBackground.height(imgBackground.height());
+  imgBackground.width(imgBackground.width());
+  $(".icons").width(imgBackground[0].width);
+  $(".popup").width(imgBackground[0].width);
+  $(".popup").height(imgBackground[0].height);
 }
 
 function setAnswerPosition() {
@@ -39,9 +40,8 @@ function createQuestionTemplate(questions) {
     return;
   }
   questions.forEach((question) => {
-    template += `<li name="${question.Name}" class="${
-      question.Done ? "question-done" : ""
-    }">${question.Content}</li>`;
+    template += `<li name="${question.Name}" class="${question.Done ? "question-done" : ""
+      }">${question.Content}</li>`;
   });
   return `<ul>${template}</ul>`;
 }
@@ -109,8 +109,14 @@ function setSoundState() {
   }
 }
 
+function adjustClientMain() {
+  const imgBackground = $(".main .img-background");
+  imgBackground.height(imgBackground.height());
+  imgBackground.width(imgBackground.width());
+}
+
 function adjustClientZone() {
-  setSizeElement();
+  setSizeZoneElement();
 
   setSoundState();
 

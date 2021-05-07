@@ -201,7 +201,8 @@ canvas {
 }
 
 .question-done {
-  color: green;
+  color: #213664;
+  font-weight: 700;
 }
 
 .popup {

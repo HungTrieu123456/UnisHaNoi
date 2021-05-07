@@ -24,7 +24,7 @@ $(document).ready(function () {
       questionName.Done = true;
       setScoreFrame();
 
-      setQuestionFrame();
+      // setQuestionFrame();
 
       if (!questionsMoc.find((x) => !x.Done)) {
         if (!isMuted) {

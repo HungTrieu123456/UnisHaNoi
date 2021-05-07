@@ -289,8 +289,8 @@ canvas {
 }
 
 .question-form {
-  height: 556px;
-  width: 455px;
+  height: 255px;
+  width: 390px;
   position: absolute;
   display: flex;
   flex-direction: column;
@@ -336,7 +336,10 @@ canvas {
 
 .question-text {
   width: 100%;
-  padding: 115px 25px 0px 25px;
+  height: 100%;
+  top: 0;
+  left: 0;
+  padding: 105px 25px 25px 25px;
   font-style: normal;
   font-weight: normal;
   font-size: 15px;

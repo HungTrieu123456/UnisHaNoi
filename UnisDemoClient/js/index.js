@@ -1,5 +1,3 @@
-
-
 $(document).ready(function () {
   if (onZone) {
     adjustClientZone();
@@ -50,8 +48,10 @@ $(document).ready(function () {
     isMuted = false;
   });
 
-  $(".zone-selection").click(function () {
-    $(`[name='${$(this).attr("zone")}']`).removeClass("display-none");
+  $(".zone-selection .title-wrap").click(function () {
+    $(
+      `[name='${$(this).closest(".zone-selection").attr("zone")}']`
+    ).removeClass("display-none");
     $(`.main`).addClass("display-none");
     onZone = true;
     restartZone();
@@ -79,12 +79,17 @@ $(document).ready(function () {
     $(this).closest(".popup").remove();
   });
 
-  $(".zone-selection").mouseenter(function(){
+  $(".zone-selection").mouseenter(function () {
     $(".main .mask").removeClass("display-none");
   });
 
-  $(".zone-selection").mouseleave(function(){
+  $(".zone-selection").mouseleave(function () {
     $(".main .mask").addClass("display-none");
+  });
 
+  $(".zone .question-form .phelix").click(function ($event) {
+    $(this).siblings(".frame").toggleClass("display-none");
+    $(this).siblings(".question-text").toggleClass("display-none");
+    $(this).toggleClass("colapse");
   });
 });

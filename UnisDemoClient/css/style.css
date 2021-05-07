@@ -1,3 +1,115 @@
+/* latin */
+@font-face {
+  font-family: "Acme";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(../asset/font/RrQfboBx-C5_XxrBbg.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+    U+FEFF, U+FFFD;
+}
+
+/* cyrillic-ext */
+@font-face {
+  font-family: "Pacifico";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(../asset/font/FwZY7-Qmy14u9lezJ-6K6MmTpA.woff2) format("woff2");
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F,
+    U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: "Pacifico";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(../asset/font/FwZY7-Qmy14u9lezJ-6D6MmTpA.woff2) format("woff2");
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* vietnamese */
+@font-face {
+  font-family: "Pacifico";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(../asset/font/FwZY7-Qmy14u9lezJ-6I6MmTpA.woff2) format("woff2");
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1,
+    U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: "Pacifico";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(../asset/font/FwZY7-Qmy14u9lezJ-6J6MmTpA.woff2) format("woff2");
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB,
+    U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: "Pacifico";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(../asset/font/FwZY7-Qmy14u9lezJ-6H6Mk.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+    U+FEFF, U+FFFD;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Opera < 12.1 */
+@-o-keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 * {
   box-sizing: border-box;
 }
@@ -101,7 +213,7 @@ body {
   position: absolute;
   left: 0;
   top: 0;
-  padding-left: 90px;
+  padding-left: 106px;
   display: flex;
   align-items: center;
   font-size: 48px;
@@ -150,25 +262,38 @@ canvas {
   z-index: 1;
 }
 
-.star {
-  background-image: url("../asset/icon/sao.svg");
+.star1 {
+  background: url(../asset/icon/sao.svg);
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center;
-  width: 100%;
-  height: 100%;
   display: inline-block;
   z-index: 2;
-  position: absolute;
   top: 0;
   left: 0;
+  width: 35px;
+  height: 35px;
+  margin-top: 30px;
+}
+
+.star2 {
+  background: url(../asset/icon/sao.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: inline-block;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  width: 35px;
+  height: 35px;
+  margin-bottom: 30px;
 }
 
 .question-form {
-  height: 425px;
-  width: 350px;
+  height: 556px;
+  width: 455px;
   position: absolute;
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
   left: 40px;
   top: 24px;
 }
@@ -182,15 +307,36 @@ canvas {
   height: 100%;
   display: inline-block;
   z-index: 2;
+  position: absolute;
+}
+
+.question-form .phelix {
+  background-image: url("../asset/icon/Phelix\ 2.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 84px;
+  height: 110px;
+  display: inline-block;
+  z-index: 2;
+  cursor: pointer;
+  -webkit-transition: 1s ease-in-out;
+  -moz-transition: 1s ease-in-out;
+  -o-transition: 1s ease-in-out;
+  transition: 0.5s ease-in-out;
+  margin: 0 auto;
+}
+
+.question-form .phelix.colapse {
+  width: 120px;
+  height: 155px;
+  margin: 0;
+
 }
 
 .question-text {
-  position: absolute;
   width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  padding: 88px 25px 25px 25px;
+  padding: 115px 25px 0px 25px;
   font-style: normal;
   font-weight: normal;
   font-size: 15px;
@@ -198,6 +344,7 @@ canvas {
   letter-spacing: 0.04em;
   color: #ad3636;
   font-family: "Source Sans Pro", sans-serif;
+  z-index: 2;
 }
 
 .question-done {
@@ -311,7 +458,7 @@ canvas {
 
 .zone-selection {
   position: absolute;
-  height: 47%;
+  height: 46%;
   width: 65%;
   right: 0;
   z-index: 2;
@@ -319,29 +466,39 @@ canvas {
 }
 
 .zone-selection .title-wrap {
-  display: inline-block;
+  display: flex;
   position: absolute;
-  /* padding: 20px 40px;
-  background: #3f76b7;
-  box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.25);
-  border-radius: 40px; */
+  align-items: center;
   left: 50%;
   top: 25%;
   transform: translate(-50%, -50%);
+  cursor: pointer;
+  display: none;
+
+  -webkit-animation: fadein 1.5s; /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadein 1.5s; /* Firefox < 16 */
+  -ms-animation: fadein 1.5s; /* Internet Explorer */
+  -o-animation: fadein 1.5s; /* Opera < 12.1 */
+  animation: fadein 1.5s;
 }
 
 .zone-selection .title-wrap .title {
   font-family: "Pacifico", cursive;
   font-weight: bold;
   font-size: 36px;
-  line-height: 24px;
+  line-height: 34px;
   color: #ffffff;
   text-transform: uppercase;
   background: #0070b3;
+  white-space: nowrap;
 }
 
 .zone-selection:hover {
   opacity: 1 !important;
+}
+
+.zone-selection:hover .title-wrap {
+  display: flex;
 }
 
 .bonus-form {

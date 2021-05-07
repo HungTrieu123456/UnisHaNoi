@@ -105,7 +105,8 @@ body {
   display: flex;
   align-items: center;
   font-size: 48px;
-  font-family: "Acme", sans-serif;
+  /* font-family: "Acme", sans-serif; */
+  font-family: "Source Sans Pro", sans-serif;
   color: #213664;
 }
 
@@ -164,8 +165,8 @@ canvas {
 }
 
 .question-form {
-  height: 300px;
-  width: 250px;
+  height: 425px;
+  width: 350px;
   position: absolute;
   display: inline-block;
   left: 40px;
@@ -189,14 +190,14 @@ canvas {
   height: 100%;
   top: 0;
   left: 0;
-  padding: 72px 25px 25px 25px;
-  font-family: Acme;
+  padding: 88px 25px 25px 25px;
   font-style: normal;
   font-weight: normal;
-  font-size: 20px;
+  font-size: 15px;
   line-height: 25px;
   letter-spacing: 0.04em;
   color: #ad3636;
+  font-family: "Source Sans Pro", sans-serif;
 }
 
 .question-done {
@@ -408,7 +409,7 @@ canvas {
   position: absolute;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.32);
+  background: rgba(0, 0, 0, 0.7);
   top: 0;
   left: 0;
 }

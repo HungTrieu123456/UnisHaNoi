@@ -62,9 +62,9 @@ function showCongratulationForm() {
                           <span class="btn next"></span>
                           <div class="animation-wrap">
                             <img style="width: auto;
-                                        height: 66%;
-                                        margin-left: -14px;
-                                        margin-top: 34px;" src="./asset/gif/Phelix_Animation.gif ">
+                            height: 124%;
+                            margin-left: -96px;
+                            margin-top: -16px;" src="./asset/gif/Phelix_Animation.gif ">
                           </div>
                       </div>
                       <div class="mask"></div>

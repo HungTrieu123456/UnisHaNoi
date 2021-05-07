@@ -44,7 +44,7 @@ function createQuestionTemplate(questions) {
   //     }">${question.Content}</li>`;
   // });
   // return `<ul>${template}</ul>`;
-  return `"UNIS has six values: Curiosity, Community, Integrity, Courage, Diversity, and Responsibility. Find an example of each value in the picture. `;
+  return `UNIS has six values: Curiosity, Community, Integrity, Courage, Diversity, and Responsibility. Find an example of each value in the picture. `;
 }
 
 function setQuestionFrame() {

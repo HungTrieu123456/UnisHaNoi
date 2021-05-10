@@ -90,6 +90,7 @@ $(document).ready(function () {
   $(".zone .question-form .phelix").click(function ($event) {
     $(this).siblings(".frame").toggleClass("display-none");
     $(this).siblings(".question-text").toggleClass("display-none");
+    $(this).closest(".question-form").toggleClass("size-auto");
     $(this).toggleClass("colapse");
   });
 });

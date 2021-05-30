@@ -4,7 +4,7 @@ var questionsMoc = [
         Content: "Find Phelix the Phoenix",
         Position: {
             RatioX: 0.83,
-            RatioY: 0.59
+            RatioY: 0.65
         },
         Done: false
     },
@@ -12,8 +12,8 @@ var questionsMoc = [
         Name: "Question2",
         Content: "Find a curious student stuyding a bug with a magnifying glass?",
         Position: {
-            RatioX: 0.73,
-            RatioY: 0.2
+            RatioX: 0.78,
+            RatioY: 0.28
         },
         Done: false
     },
@@ -21,7 +21,7 @@ var questionsMoc = [
         Name: "Question3",
         Content: "Find two students learning about community as they make lanterns.",
         Position: {
-            RatioX: 0.4,
+            RatioX: 0.5,
             RatioY: 0.32
         },
         Done: false
@@ -30,7 +30,7 @@ var questionsMoc = [
         Name: "Question4",
         Content: "Find a student who is standing up for another student.",
         Position: {
-            RatioX: 0.22,
+            RatioX: 0.35,
             RatioY: 0.42
         },
         Done: false
@@ -40,7 +40,7 @@ var questionsMoc = [
         Content: "Find a courageous student about to make a big jump.",
         Position: {
             RatioX: 0.21,
-            RatioY: 0.65
+            RatioY: 0.75
         },
         Done: false
     },
@@ -48,7 +48,7 @@ var questionsMoc = [
         Name: "Question6",
         Content: "Find a responsible student putting away toys.",
         Position: {
-            RatioX: 0.26,
+            RatioX: 0.38,
             RatioY: 0.32
         },
         Done: false

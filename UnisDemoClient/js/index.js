@@ -48,9 +48,15 @@ $(document).ready(function () {
     isMuted = false;
   });
 
-  $(".zone-selection .title-wrap").click(function () {
+  $(".zone .icons .home").click(function ($event) {
+    $(`.zone`).addClass("display-none");
+    $(`.main`).removeClass("display-none");
+    onZone = false;
+  });
+
+  $(".zone-selection").click(function () {
     $(
-      `[name='${$(this).closest(".zone-selection").attr("zone")}']`
+      `[name='${$(this).attr("zone")}']`
     ).removeClass("display-none");
     $(`.main`).addClass("display-none");
     onZone = true;

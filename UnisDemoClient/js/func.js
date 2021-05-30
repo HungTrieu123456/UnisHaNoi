@@ -5,9 +5,12 @@ function setSizeZoneElement() {
   const imgBackground = $(".zone .img-background");
   imgBackground.height(imgBackground.height());
   imgBackground.width(imgBackground.width());
-  $(".icons").width(imgBackground[0].width);
-  $(".popup").width(imgBackground[0].width);
-  $(".popup").height(imgBackground[0].height);
+
+  $(".icons").width(imgBackground.width());
+  $(".icons").height(imgBackground.height());
+
+  $(".popup").width(imgBackground.width());
+  $(".popup").height(imgBackground.height());
 }
 
 function setAnswerPosition() {
@@ -24,7 +27,7 @@ function setAnswerPosition() {
       question
     );
 
-    $(".zone").append(qs.getAnswerHTML());
+    $(".zone .icons").append(qs.getAnswerHTML());
   });
 }
 
@@ -39,11 +42,18 @@ function createQuestionTemplate(questions) {
   if (!questions) {
     return;
   }
-  questions.forEach((question) => {
+  questions.forEach((question, index) => {
     template += `<li name="${question.Name}" class="${question.Done ? "question-done" : ""
-      }">${question.Content}</li>`;
+      }">
+      <div>
+        ${index + 1}. ${question.Content}
+        <div class="curiosity">
+          CURIOSITY
+        </div>
+      </div>
+      </li>`;
   });
-  return `<ul>${template}</ul>`;
+  return `<ul class="question-wrap">${template}</ul>`;
 }
 
 function setQuestionFrame() {
@@ -57,14 +67,12 @@ function showCongratulationForm() {
   $(".zone .congratulation-form").remove();
   const template = `<div class="popup congratulation-form">
                       <div class="frame">
+                          <span class="btn close"></span>
                           <span class="btn home"></span>
                           <span class="btn bonus"></span>
                           <span class="btn next"></span>
                           <div class="animation-wrap">
-                            <img style="width: auto;
-                            height: 124%;
-                            margin-left: -96px;
-                            margin-top: -16px;" src="./asset/gif/Phelix_Animation.gif ">
+                            <img src="./asset/gif/Phelix_Animation.gif ">
                           </div>
                       </div>
                       <div class="mask"></div>
@@ -81,7 +89,10 @@ function showBonusForm() {
   const template = `<div class="popup bonus-form">
                       <div class="frame">
                         <span class="btn close"></span>
-                        <span class="btn home"></span>
+                      </div>
+                      <div class="content-wrap">
+                        <div class="content">
+                        </div>
                         <span class="btn next"></span>
                       </div>
                       <div class="mask"></div>

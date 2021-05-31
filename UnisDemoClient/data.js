@@ -6,7 +6,7 @@ var questionsMoc = [
             RatioX: 0.83,
             RatioY: 0.65
         },
-        Done: false,
+        Done: true,
         TextComplete: ""
     },
     {
@@ -16,7 +16,7 @@ var questionsMoc = [
             RatioX: 0.78,
             RatioY: 0.28
         },
-        Done: false,
+        Done: true,
         TextComplete: "CURIOSITY"
     },
     {
@@ -26,7 +26,7 @@ var questionsMoc = [
             RatioX: 0.5,
             RatioY: 0.32
         },
-        Done: false,
+        Done: true,
         TextComplete: "COMMUNITY"
     },
     {
@@ -36,7 +36,7 @@ var questionsMoc = [
             RatioX: 0.35,
             RatioY: 0.42
         },
-        Done: false,
+        Done: true,
         TextComplete: "INTEGRITY"
     },
     {
@@ -46,7 +46,7 @@ var questionsMoc = [
             RatioX: 0.21,
             RatioY: 0.75
         },
-        Done: false,
+        Done: true,
         TextComplete: "COURAGE"
     },
     {
@@ -56,7 +56,7 @@ var questionsMoc = [
             RatioX: 0.33,
             RatioY: 0.23
         },
-        Done: false,
+        Done: true,
         TextComplete: "DIVERSITY"
     },
     {
@@ -66,7 +66,50 @@ var questionsMoc = [
             RatioX: 0.38,
             RatioY: 0.32
         },
-        Done: false,
+        Done: true,
         TextComplete: "RESPONSIBILITY"
     }
 ]
+
+
+var bonusQuestionMoc = {
+    General: "One of the IB Learner Profiles is Risk-Taker. Tell us about a moment when you were a risk-taker?",
+    Detail: [
+        {
+            Name: "QuestionBonus1",
+            Content: "Find SDG 3 - Good health and well-being",
+            Position: {
+                RatioX: 0.38,
+                RatioY: 0.32
+            },
+            Done: false
+        },
+        {
+            Name: "QuestionBonus2",
+            Content: "Find SDG 13 - Climate action",
+            Position: {
+                RatioX: 0.38,
+                RatioY: 0.32
+            },
+            Done: false
+        },
+        {
+            Name: "QuestionBonus3",
+            Content: "Find SDG 14 - Life below water",
+            Position: {
+                RatioX: 0.38,
+                RatioY: 0.32
+            },
+            Done: false
+        },
+        {
+            Name: "QuestionBonus4",
+            Content: "Find SDG 15 - Life on land",
+            Position: {
+                RatioX: 0.38,
+                RatioY: 0.32
+            },
+            Done: false
+        }
+    ]
+}

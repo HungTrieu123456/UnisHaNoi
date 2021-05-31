@@ -6,11 +6,14 @@ function setSizeZoneElement() {
   imgBackground.height(imgBackground.height());
   imgBackground.width(imgBackground.width());
 
-  $(".icons").width(imgBackground.width());
-  $(".icons").height(imgBackground.height());
+  $(".zone").width(imgBackground.width());
+  $(".zone").height(imgBackground.height());
 
-  $(".popup").width(imgBackground.width());
-  $(".popup").height(imgBackground.height());
+  // $(".icons").width(imgBackground.width());
+  // $(".icons").height(imgBackground.height());
+
+  // $(".popup").width(imgBackground.width());
+  // $(".popup").height(imgBackground.height());
 }
 
 function setAnswerPosition() {
@@ -43,8 +46,9 @@ function createQuestionTemplate(questions) {
     return;
   }
   questions.forEach((question, index) => {
-    template += `<li name="${question.Name}" class="${question.Done ? "question-done" : ""
-      }">
+    template += `<li name="${question.Name}" class="${
+      question.Done ? "question-done" : ""
+    }">
       <div>
         ${index + 1}. ${question.Content}
         <div class="text-complete">
@@ -63,6 +67,17 @@ function setQuestionFrame() {
   $(".question-form .question-text").append(createQuestionTemplate(questions));
 }
 
+function setBonusQuestionFrame(bonusQuestionMoc) {
+  $(".question-form .question-text ul").remove();
+  $(".answer").remove();
+  if (!bonusQuestionMoc || !bonusQuestionMoc.Detail) {
+    return;
+  }
+  $(".question-form .question-text").append(
+    createQuestionTemplate(bonusQuestionMoc.Detail)
+  );
+}
+
 function showCongratulationForm() {
   $(".zone .congratulation-form").remove();
   const template = `<div class="popup congratulation-form">
@@ -79,9 +94,6 @@ function showCongratulationForm() {
                     </div>`;
 
   $(".zone").append(template);
-  const imgBackground = document.querySelectorAll(".zone .img-background")[0];
-  $(".popup").width(imgBackground.width);
-  $(".popup").height(imgBackground.height);
 }
 
 function showBonusForm() {
@@ -98,9 +110,8 @@ function showBonusForm() {
                       <div class="mask"></div>
                     </div>`;
   $(".zone").append(template);
-  const imgBackground = document.querySelectorAll(".zone .img-background")[0];
-  $(".popup").width(imgBackground.width);
-  $(".popup").height(imgBackground.height);
+
+  bonusPopupQuestions(bonusQuestionMoc);
 }
 
 function restartZone() {
@@ -120,6 +131,26 @@ function setSoundState() {
     $(".sound-off").addClass("display-none");
     $(".sound-on").removeClass("display-none");
   }
+}
+
+function bonusPopupQuestions(bonusQuestionMoc) {
+  let template = ``;
+  if (!bonusQuestionMoc || !bonusQuestionMoc.Detail) {
+    return;
+  }
+  bonusQuestionMoc.Detail.forEach((bonusQuestion, index) => {
+    template += `<li name="${bonusQuestion.Name}" class="${
+      bonusQuestion.Done ? "question-done" : ""
+    }">
+      <div>
+        ${bonusQuestion.Content}
+      </div>
+      </li>`;
+  });
+
+  $(".bonus-form .content ul").remove();
+
+  $(".bonus-form .content").append(`<ul class="bonus-wrap">${template}</ul>`);
 }
 
 function adjustClientMain() {

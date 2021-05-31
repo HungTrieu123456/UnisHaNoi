@@ -60,7 +60,7 @@ $(document).ready(function () {
     ).removeClass("display-none");
     $(`.main`).addClass("display-none");
     onZone = true;
-    restartZone();
+    // restartZone();
     adjustClientZone();
   });
 
@@ -79,6 +79,11 @@ $(document).ready(function () {
     $(`.zone`).addClass("display-none");
     $(`.main`).removeClass("display-none");
     onZone = false;
+  });
+
+  $(".zone").on("click", ".bonus-form .next", function ($event) {
+    $(this).closest(".popup").remove();
+    setBonusQuestionFrame(bonusQuestionMoc);
   });
 
   $(".zone").on("click", ".popup .close", function ($event) {

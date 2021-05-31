@@ -47,8 +47,8 @@ function createQuestionTemplate(questions) {
       }">
       <div>
         ${index + 1}. ${question.Content}
-        <div class="curiosity">
-          CURIOSITY
+        <div class="text-complete">
+          ${question.TextComplete}
         </div>
       </div>
       </li>`;

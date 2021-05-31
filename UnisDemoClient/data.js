@@ -6,34 +6,38 @@ var questionsMoc = [
             RatioX: 0.83,
             RatioY: 0.65
         },
-        Done: false
+        Done: false,
+        TextComplete: ""
     },
     {
         Name: "Question2",
-        Content: "Find a curious student stuyding a bug with a magnifying glass?",
+        Content: "Find a curious student studying a bug.",
         Position: {
             RatioX: 0.78,
             RatioY: 0.28
         },
-        Done: false
+        Done: false,
+        TextComplete: "CURIOSITY"
     },
     {
         Name: "Question3",
-        Content: "Find two students learning about community as they make lanterns.",
+        Content: "Find two students making lanterns.",
         Position: {
             RatioX: 0.5,
             RatioY: 0.32
         },
-        Done: false
+        Done: false,
+        TextComplete: "COMMUNITY"
     },
     {
         Name: "Question4",
-        Content: "Find a student who is standing up for another student.",
+        Content: "Find a student standing up for another student.",
         Position: {
             RatioX: 0.35,
             RatioY: 0.42
         },
-        Done: false
+        Done: false,
+        TextComplete: "INTEGRITY"
     },
     {
         Name: "Question5",
@@ -42,15 +46,27 @@ var questionsMoc = [
             RatioX: 0.21,
             RatioY: 0.75
         },
-        Done: false
+        Done: false,
+        TextComplete: "COURAGE"
     },
     {
         Name: "Question6",
+        Content: "Find a banner celebrating children from around the world.",
+        Position: {
+            RatioX: 0.33,
+            RatioY: 0.23
+        },
+        Done: false,
+        TextComplete: "DIVERSITY"
+    },
+    {
+        Name: "Question7",
         Content: "Find a responsible student putting away toys.",
         Position: {
             RatioX: 0.38,
             RatioY: 0.32
         },
-        Done: false
+        Done: false,
+        TextComplete: "RESPONSIBILITY"
     }
 ]

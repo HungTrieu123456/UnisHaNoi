@@ -13,11 +13,11 @@ class Question {
     }
   }
 
-  getAnswerHTML() {
-    return `<div class="answer" style="top: ${this.top}px; left: ${
+  getAnswerHTML(answerType) {
+    return `<div class="answer answer-${answerType}" style="top: ${this.top}px; left: ${
       this.left
     }px;" name="${this.name}">
-                  <span class="check ${this.done ? "" : "display-none"}"></span>
+                  <span class="check-${answerType} ${this.done ? "" : "display-none"}"></span>
                 </div>`;
   }
 }

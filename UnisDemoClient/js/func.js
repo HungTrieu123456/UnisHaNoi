@@ -8,18 +8,11 @@ function setSizeZoneElement() {
 
   $(".zone").width(imgBackground.width());
   $(".zone").height(imgBackground.height());
-
-  // $(".icons").width(imgBackground.width());
-  // $(".icons").height(imgBackground.height());
-
-  // $(".popup").width(imgBackground.width());
-  // $(".popup").height(imgBackground.height());
 }
 
-function setAnswerPosition() {
+function setAnswerPosition(questions) {
   const imgBackground = document.querySelectorAll(".zone .img-background")[0];
   $(".zone .answer").remove();
-  const questions = questionsMoc;
   if (!questions) {
     return;
   }
@@ -30,14 +23,46 @@ function setAnswerPosition() {
       question
     );
 
-    $(".zone .icons").append(qs.getAnswerHTML());
+    $(".zone .icons").append(qs.getAnswerHTML("question"));
   });
 }
 
-function setScoreFrame() {
-  const total = questionsMoc.length;
-  const totalCompleted = questionsMoc.filter((x) => x.Done).length;
+function setBonusAnswerPosition(questions) {
+  const imgBackground = document.querySelectorAll(".zone .img-background")[0];
+  $(".zone .answer").remove();
+  if (!questions) {
+    return;
+  }
+  questions.forEach((question) => {
+    const qs = new Question(
+      imgBackground.height,
+      imgBackground.width,
+      question
+    );
+
+    $(".zone .icons").append(qs.getAnswerHTML("question-bonus"));
+  });
+}
+
+function setScoreFrame(questions, isBonus) {
+  const total = questions.length;
+  const totalCompleted = questions.filter((x) => x.Done).length;
   $(".score .count-text .text").text(`${totalCompleted}/${total}`);
+  if (isBonus) {
+    $(".score .count-text .check-icon").addClass("display-none");
+    $(".score .count-text .check-icon-bonus").removeClass("display-none");
+
+    if (totalCompleted > 0) {
+      $(".score .count-text .check-icon-bonus").addClass("animation-jump");
+      setTimeout(() => {
+        $(".score .count-text .check-icon-bonus").removeClass("animation-jump");
+      }, 600);
+    }
+
+  } else {
+    $(".score .count-text .check-icon-bonus").addClass("display-none");
+    $(".score .count-text .check-icon").removeClass("display-none");
+  }
 }
 
 function createQuestionTemplate(questions) {
@@ -60,6 +85,29 @@ function createQuestionTemplate(questions) {
   return `<ul class="question-wrap">${template}</ul>`;
 }
 
+function createBonusQuestionTemplate(questions) {
+  let template = ``;
+  if (!questions) {
+    return;
+  }
+  questions.forEach((question, index) => {
+    template += `<li name="${question.Name}" class="${
+      question.Done ? "question-done" : ""
+    } bonus-question">
+      <div>
+        ${question.Content}
+      </div>
+      </li>`;
+  });
+  return `<div class="content">
+            <div class="bonus-title">
+            </div>
+            <ul class="bonus-question-wrap">
+              ${template}
+            </ul>
+          </div>`;
+}
+
 function setQuestionFrame() {
   const questions = questionsMoc;
   $(".question-form .question-text ul").remove();
@@ -68,13 +116,12 @@ function setQuestionFrame() {
 }
 
 function setBonusQuestionFrame(bonusQuestionMoc) {
-  $(".question-form .question-text ul").remove();
-  $(".answer").remove();
+  $(".question-form .question-text .content").remove();
   if (!bonusQuestionMoc || !bonusQuestionMoc.Detail) {
     return;
   }
   $(".question-form .question-text").append(
-    createQuestionTemplate(bonusQuestionMoc.Detail)
+    createBonusQuestionTemplate(bonusQuestionMoc.Detail)
   );
 }
 
@@ -85,6 +132,24 @@ function showCongratulationForm() {
                           <span class="btn close"></span>
                           <span class="btn home"></span>
                           <span class="btn bonus"></span>
+                          <span class="btn next"></span>
+                          <div class="animation-wrap">
+                            <img src="./asset/gif/Phelix_Animation.gif ">
+                          </div>
+                      </div>
+                      <div class="mask"></div>
+                    </div>`;
+
+  $(".zone").append(template);
+}
+
+function showCongratulationBonusForm() {
+  $(".zone .congratulation-bonus-form").remove();
+  const template = `<div class="popup congratulation-bonus-form">
+                      <div class="frame">
+                          <span class="btn close"></span>
+                          <span class="btn home"></span>
+                          <span class="btn info"></span>
                           <span class="btn next"></span>
                           <div class="animation-wrap">
                             <img src="./asset/gif/Phelix_Animation.gif ">
@@ -164,9 +229,9 @@ function adjustClientZone() {
 
   setSoundState();
 
-  setAnswerPosition();
+  setAnswerPosition(questionsMoc);
 
   setQuestionFrame();
 
-  setScoreFrame();
+  setScoreFrame(questionsMoc, false);
 }

@@ -6,7 +6,7 @@ var questionsMoc = [
             RatioX: 0.83,
             RatioY: 0.65
         },
-        Done: true,
+        Done: false,
         TextComplete: ""
     },
     {
@@ -16,7 +16,7 @@ var questionsMoc = [
             RatioX: 0.78,
             RatioY: 0.28
         },
-        Done: true,
+        Done: false,
         TextComplete: "CURIOSITY"
     },
     {
@@ -26,7 +26,7 @@ var questionsMoc = [
             RatioX: 0.5,
             RatioY: 0.32
         },
-        Done: true,
+        Done: false,
         TextComplete: "COMMUNITY"
     },
     {
@@ -36,7 +36,7 @@ var questionsMoc = [
             RatioX: 0.35,
             RatioY: 0.42
         },
-        Done: true,
+        Done: false,
         TextComplete: "INTEGRITY"
     },
     {
@@ -46,7 +46,7 @@ var questionsMoc = [
             RatioX: 0.21,
             RatioY: 0.75
         },
-        Done: true,
+        Done: false,
         TextComplete: "COURAGE"
     },
     {
@@ -56,7 +56,7 @@ var questionsMoc = [
             RatioX: 0.33,
             RatioY: 0.23
         },
-        Done: true,
+        Done: false,
         TextComplete: "DIVERSITY"
     },
     {
@@ -66,7 +66,7 @@ var questionsMoc = [
             RatioX: 0.38,
             RatioY: 0.32
         },
-        Done: true,
+        Done: false,
         TextComplete: "RESPONSIBILITY"
     }
 ]
@@ -79,8 +79,8 @@ var bonusQuestionMoc = {
             Name: "QuestionBonus1",
             Content: "Find SDG 3 - Good health and well-being",
             Position: {
-                RatioX: 0.38,
-                RatioY: 0.32
+                RatioX: 0.55,
+                RatioY: 0.68
             },
             Done: false
         },
@@ -88,8 +88,8 @@ var bonusQuestionMoc = {
             Name: "QuestionBonus2",
             Content: "Find SDG 13 - Climate action",
             Position: {
-                RatioX: 0.38,
-                RatioY: 0.32
+                RatioX: 0.68,
+                RatioY: 0.22
             },
             Done: false
         },
@@ -97,8 +97,8 @@ var bonusQuestionMoc = {
             Name: "QuestionBonus3",
             Content: "Find SDG 14 - Life below water",
             Position: {
-                RatioX: 0.38,
-                RatioY: 0.32
+                RatioX: 0.28,
+                RatioY: 0.28
             },
             Done: false
         },
@@ -106,8 +106,8 @@ var bonusQuestionMoc = {
             Name: "QuestionBonus4",
             Content: "Find SDG 15 - Life on land",
             Position: {
-                RatioX: 0.38,
-                RatioY: 0.32
+                RatioX: 0.84,
+                RatioY: 0.27
             },
             Done: false
         }

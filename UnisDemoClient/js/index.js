@@ -11,8 +11,8 @@ $(document).ready(function () {
     // }
   });
 
-  $(".zone").on("click", ".answer", function ($event) {
-    $(this).find(".check").removeClass("display-none");
+  $(".zone").on("click", ".answer-question", function ($event) {
+    $(this).find(".check-question").removeClass("display-none");
 
     const questionName = questionsMoc.find(
       (x) => x.Name === $(this).attr("name")
@@ -22,7 +22,7 @@ $(document).ready(function () {
         $(".sound-found")[0].play();
       }
       questionName.Done = true;
-      setScoreFrame();
+      setScoreFrame(questionsMoc, false);
 
       setQuestionFrame();
 
@@ -32,6 +32,31 @@ $(document).ready(function () {
         }
 
         showCongratulationForm();
+      }
+    }
+  });
+
+  $(".zone").on("click", ".answer-question-bonus", function ($event) {
+    $(this).find(".check-question-bonus").removeClass("display-none");
+
+    const questionName = bonusQuestionMoc.Detail.find(
+      (x) => x.Name === $(this).attr("name")
+    );
+    if (questionName) {
+      if (!isMuted) {
+        $(".sound-found")[0].play();
+      }
+      questionName.Done = true;
+      setScoreFrame(bonusQuestionMoc.Detail, true);
+
+      setBonusQuestionFrame(bonusQuestionMoc);
+
+      if (!bonusQuestionMoc.Detail.find((x) => !x.Done)) {
+        if (!isMuted) {
+          $(".sound-congratulation")[0].play();
+        }
+
+        showCongratulationBonusForm();
       }
     }
   });
@@ -81,9 +106,18 @@ $(document).ready(function () {
     onZone = false;
   });
 
+  $(".zone").on("click", ".congratulation-bonus-form .home", function ($event) {
+    $(`.zone`).addClass("display-none");
+    $(`.main`).removeClass("display-none");
+    onZone = false;
+  });
+
   $(".zone").on("click", ".bonus-form .next", function ($event) {
     $(this).closest(".popup").remove();
+    $(".question-form .question-text ul").remove();
     setBonusQuestionFrame(bonusQuestionMoc);
+    setScoreFrame(bonusQuestionMoc.Detail, true);
+    setBonusAnswerPosition(bonusQuestionMoc.Detail);
   });
 
   $(".zone").on("click", ".popup .close", function ($event) {

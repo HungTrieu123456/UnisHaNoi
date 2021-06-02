@@ -140,7 +140,7 @@ function setBonusQuestionFrame(bonusQuestionMoc) {
     return;
   }
   $(".question-form .question-text").append(
-    createBonusQuestionTemplate(bonusQuestionMoc, true)
+    createBonusQuestionTemplate(bonusQuestionMoc, false)
   );
 }
 
@@ -195,7 +195,7 @@ function showBonusForm() {
                     </div>`;
   $(".zone").append(template);
 
-  bonusPopupQuestions(bonusQuestionMoc, true);
+  bonusPopupQuestions(bonusQuestionMoc, false);
 }
 
 function restartZone() {

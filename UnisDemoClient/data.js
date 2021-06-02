@@ -73,7 +73,7 @@ var questionsMoc = [
 
 
 var bonusQuestionMoc = {
-    General: "One of the IB Learner Profiles is Risk-Taker. Tell us about a moment when you were a risk-taker?",
+    GeneralQuestion: "One of the IB Learner Profiles is Risk-Taker. Tell us about a moment when you were a risk-taker?",
     Detail: [
         {
             Name: "QuestionBonus1",

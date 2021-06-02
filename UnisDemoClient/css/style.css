@@ -618,6 +618,11 @@ canvas {
   color: #e8af00;
 }
 
+.bonus-question-general {
+  color: #219653;
+  line-height: 150%;
+}
+
 .question-form .question-text .question-wrap .question-done .text-complete {
   display: block;
 }

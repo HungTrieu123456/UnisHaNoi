@@ -1,5 +1,11 @@
+let questionStateEnum = {
+  Normal: 1,
+  Bonus: 2,
+};
+
 let onZone = false;
 let isMuted = false;
+let questionState = questionStateEnum.Normal;
 
 function setSizeZoneElement() {
   const imgBackground = $(".zone .img-background");
@@ -58,7 +64,6 @@ function setScoreFrame(questions, isBonus) {
         $(".score .count-text .check-icon-bonus").removeClass("animation-jump");
       }, 600);
     }
-
   } else {
     $(".score .count-text .check-icon-bonus").addClass("display-none");
     $(".score .count-text .check-icon").removeClass("display-none");
@@ -85,27 +90,40 @@ function createQuestionTemplate(questions) {
   return `<ul class="question-wrap">${template}</ul>`;
 }
 
-function createBonusQuestionTemplate(questions) {
+function createBonusQuestionTemplate(bonusQuestionMoc, isDetail) {
   let template = ``;
-  if (!questions) {
+  if (!bonusQuestionMoc) {
     return;
   }
-  questions.forEach((question, index) => {
-    template += `<li name="${question.Name}" class="${
-      question.Done ? "question-done" : ""
-    } bonus-question">
-      <div>
-        ${question.Content}
-      </div>
-      </li>`;
-  });
-  return `<div class="content">
-            <div class="bonus-title">
-            </div>
-            <ul class="bonus-question-wrap">
-              ${template}
-            </ul>
-          </div>`;
+  if (isDetail) {
+    const questions = bonusQuestionMoc.Detail;
+    questions.forEach((question, index) => {
+      template += `<li name="${question.Name}" class="${
+        question.Done ? "question-done" : ""
+      } bonus-question">
+        <div>
+          ${question.Content}
+        </div>
+        </li>`;
+    });
+    return `<div class="content">
+              <div class="bonus-title">
+              </div>
+              <ul class="bonus-question-wrap">
+                ${template}
+              </ul>
+            </div>`;
+  } else {
+    return `<div class="content">
+              <div class="bonus-title">
+              </div>
+              <ul class="bonus-question-wrap">
+                <li class="bonus-question-general">
+                  ${bonusQuestionMoc.GeneralQuestion}
+                </li>
+              </ul>
+            </div>`;
+  }
 }
 
 function setQuestionFrame() {
@@ -121,7 +139,7 @@ function setBonusQuestionFrame(bonusQuestionMoc) {
     return;
   }
   $(".question-form .question-text").append(
-    createBonusQuestionTemplate(bonusQuestionMoc.Detail)
+    createBonusQuestionTemplate(bonusQuestionMoc, false)
   );
 }
 
@@ -176,7 +194,7 @@ function showBonusForm() {
                     </div>`;
   $(".zone").append(template);
 
-  bonusPopupQuestions(bonusQuestionMoc);
+  bonusPopupQuestions(bonusQuestionMoc, false);
 }
 
 function restartZone() {
@@ -198,20 +216,28 @@ function setSoundState() {
   }
 }
 
-function bonusPopupQuestions(bonusQuestionMoc) {
+function bonusPopupQuestions(bonusQuestionMoc, isDetail) {
   let template = ``;
   if (!bonusQuestionMoc || !bonusQuestionMoc.Detail) {
     return;
   }
-  bonusQuestionMoc.Detail.forEach((bonusQuestion, index) => {
-    template += `<li name="${bonusQuestion.Name}" class="${
-      bonusQuestion.Done ? "question-done" : ""
-    }">
+  if (isDetail) {
+    bonusQuestionMoc.Detail.forEach((bonusQuestion, index) => {
+      template += `<li name="${bonusQuestion.Name}" class="${
+        bonusQuestion.Done ? "question-done" : ""
+      }">
+        <div>
+          ${bonusQuestion.Content}
+        </div>
+        </li>`;
+    });
+  } else {
+    template = `<li>
       <div>
-        ${bonusQuestion.Content}
+        ${bonusQuestionMoc.GeneralQuestion}
       </div>
       </li>`;
-  });
+  }
 
   $(".bonus-form .content ul").remove();
 
@@ -234,4 +260,16 @@ function adjustClientZone() {
   setQuestionFrame();
 
   setScoreFrame(questionsMoc, false);
+}
+
+function revealAllAnswer() {
+  if (questionState === questionStateEnum.Normal) {
+    $(".answer-question").click();
+  }
+}
+
+function revealAllBonusAnswer() {
+  if (questionState === questionStateEnum.Bonus) {
+    $(".answer-question-bonus").click();
+  }
 }

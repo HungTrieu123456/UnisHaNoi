@@ -30,7 +30,7 @@ $(document).ready(function () {
         if (!isMuted) {
           $(".sound-congratulation")[0].play();
         }
-
+        questionState = questionStateEnum.Bonus
         showCongratulationForm();
       }
     }

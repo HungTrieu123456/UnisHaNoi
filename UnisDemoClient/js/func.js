@@ -3,6 +3,7 @@ let questionStateEnum = {
   Bonus: 2,
 };
 
+let isFirstLoadZone = true;
 let onZone = false;
 let isMuted = false;
 let questionState = questionStateEnum.Normal;

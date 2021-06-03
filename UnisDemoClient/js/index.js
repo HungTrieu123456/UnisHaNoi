@@ -86,7 +86,11 @@ $(document).ready(function () {
     $(`.main`).addClass("display-none");
     onZone = true;
     // restartZone();
-    adjustClientZone();
+
+    if (isFirstLoadZone) {
+      adjustClientZone();
+      isFirstLoadZone = false;
+    }
   });
 
   $(".zone").on("click", ".congratulation-form .home", function ($event) {
